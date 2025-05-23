@@ -20,11 +20,10 @@ function medir_tempo() {
 # Configurando pasta
 echo -en "${CINZA}Configurando pasta ${RESET}"
 medir_tempo bash -c '
-    mkdir -p first_repo &&
-    cp ./requiriments.txt ./first_repo/requiriments.txt &&
-    cp ./script.py ./first_repo/script.py
+    cd ../../ &&
+    mkdir -p ./output/uv_1 
 '
-cd first_repo
+cd ../../output/uv_1/
 
 # Instalando python
 echo -en "${CINZA}Instalando python ${RESET}"
@@ -34,11 +33,11 @@ medir_tempo uv python install 3.9.22
 echo -en "${CINZA}Configurando ambiente venv e instalando bibliotecas ${RESET}"
 medir_tempo bash -c '
     uv init --python 3.9.22 &&
-    uv add -r requiriments.txt
+    uv add -r ../../src/requiriments.txt
 '
 # Rodando script
 echo -en "${CINZA}Rodando script ${RESET}"
-medir_tempo uv run script.py
+medir_tempo uv run ../../src/script.py
 
 
 
