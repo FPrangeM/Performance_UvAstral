@@ -9,7 +9,6 @@ uv python install 3.9
 uv init second_repo --python 3.9
 
 cp ./requiriments.txt ./second_repo/requiriments.txt
-cp ./main.py ./second_repo/main.py
 cd second_repo
 
 uv add -r requiriments.txt
