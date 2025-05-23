@@ -1,19 +1,19 @@
 <!-- # Performance_UvAstral -->
 # 🚀 Benchmark UV vs Pyenv+Pip
 
-Um projeto para comparar o desempenho do gerenciador **UV** (escrito em Rust) com o fluxo tradicional **Pyenv + Pip** em tarefas críticas de desenvolvimento Python.
+Projeto para comparar o desempenho do gerenciador **[uv](https://github.com/astral-sh/uv)** da astral contra o fluxo tradicional **Pyenv + Pip** em tarefas comuns de desenvolvimento Python.
 
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+
 
 ## 🎯 Objetivo
-Comparar o desempenho das ferramentas em cenários reais:
+Comparar o desempenho das ferramentas nos cenários:
 1. ⏱️ **Instalação de versão Python** alternativa (3.9.22)
 2. 🛠️ **Criação de ambiente virtual** + instalação de dependências
-3. 🔄 Execução com/sem cache (primeira vs segunda chamada)
+3. 🔄 Execução  com/sem cache (primeira vs segunda chamada)
 
 ## ⚙️ Pré-requisitos
-- Python 3.9+ instalado
 - [Pyenv](https://github.com/pyenv/pyenv) instalado e configurado
 - [UV](https://github.com/astral-sh/uv) instalado 
 - Bash
@@ -26,8 +26,8 @@ git clone https://github.com/FPrangeM/Performance_UvAstral.git
 cd Performance_UvAstral
 
 # 2. Execute os testes (Pyenv)
-./scripts/pyenv/setup_1.sh  # Primeira execução (sem cache)
-./scripts/pyenv/setup_2.sh  # Segunda execução (com cache)
+./scripts/pyenv_pip/setup_1.sh  # Primeira execução (sem cache)
+./scripts/pyenv_pip/setup_2.sh  # Segunda execução (com cache)
 
 # 3. Execute os testes (UV)
 ./scripts/uv/setup_1.sh     # Primeira execução
@@ -63,22 +63,16 @@ FPrangeM/
 ├── src/                        # Arquivos compartilhados
 │   ├── requirements.txt        # Dependências de teste
 │   └── script.py               # Script Python exemplo
-├── benchmarks/                 # Resultados (adicionar manualmente)
 ├── cleanup.sh                  # Script de limpeza
 └── README.md                   # Este arquivo
 ```
 
 ## ⚠️ Notas Importantes
 
-1. 🔧 **Execute em ambiente isolado** (VM/container/Docker) para evitar conflitos com suas instalações locais.
+1.  **Execute em ambiente isolado** (VM/container/Docker) para evitar conflitos com suas instalações locais.
     
-2. 🧹 **Rode `cleanup.sh` entre testes diferentes** para garantir medições justas.
-    
-3. 🌐 **Internet estável** é crucial para medições consistentes.
-    
-4. 📌 Versão do Python testada: **3.9.22** (alterável nos scripts).
-    
-5. ⚡ O UV usa cache global em `~/.cache/uv`.
+2.  **Rode o `cleanup.sh` entre testes diferentes** para garantir medições justas.
+
     
 
 ## 📌 Exemplo de Saída
