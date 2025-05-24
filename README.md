@@ -60,7 +60,9 @@ FPrangeM/
 
 ## Notas Importantes
 
-1.  **Execute em ambiente isolado** (VM/container/Docker) para evitar conflitos com suas instalações locais.
+1.  **Edite o requirements.txt** para adicionar diferentes bibliotecas para seus testes.
+
+2. **Altere ou adicione a versão de python apontada nos setup*.sh e cleanup.sh** conforme necessário. 
     
 2.  **Rode o `cleanup.sh` entre testes diferentes** para garantir medições justas.
 
