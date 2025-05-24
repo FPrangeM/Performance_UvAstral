@@ -1,5 +1,5 @@
 <!-- # Performance_UvAstral -->
-# 🚀 Benchmark UV vs Pyenv+Pip
+# Benchmark UV vs Pyenv+Pip
 
 Projeto para comparar o desempenho do gerenciador **[uv](https://github.com/astral-sh/uv)** da astral contra o fluxo tradicional **Pyenv + Pip** em tarefas comuns de desenvolvimento Python.
 
@@ -7,18 +7,18 @@ Projeto para comparar o desempenho do gerenciador **[uv](https://github.com/astr
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
 
-## 🎯 Objetivo
+## Objetivo
 Comparar o desempenho das ferramentas nos cenários:
 1. ⏱️ **Instalação de versão Python** alternativa (3.9.22)
 2. 🛠️ **Criação de ambiente virtual** + instalação de dependências
 3. 🔄 Execução  com/sem cache (primeira vs segunda chamada)
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 - [Pyenv](https://github.com/pyenv/pyenv) instalado e configurado
 - [UV](https://github.com/astral-sh/uv) instalado 
 - Bash
 
-## 🚀 Como Usar
+## Como Usar
 
 ```bash
 # 1. Clone o repositório
@@ -30,8 +30,9 @@ cd scripts/pyenv_pip/
 ./setup_1.sh  # Primeira execução (sem cache)
 ./setup_2.sh  # Segunda execução (com cache)
 
+
 # 3. Execute os testes (UV)
-cd scripts/uv/
+cd ../uv/
 ./setup_1.sh     # Primeira execução
 ./setup_2.sh     # Com cache
 
@@ -39,7 +40,7 @@ cd scripts/uv/
 ./cleanup.sh     # Remove instalações temporárias
 ```
 
-## 🧩 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 FPrangeM/
@@ -57,7 +58,7 @@ FPrangeM/
 └── README.md                   # Este arquivo
 ```
 
-## ⚠️ Notas Importantes
+## Notas Importantes
 
 1.  **Execute em ambiente isolado** (VM/container/Docker) para evitar conflitos com suas instalações locais.
     
@@ -65,7 +66,7 @@ FPrangeM/
 
     
 
-## 📌 Resultado Encontrado
+## Resultado Encontrado
 
 ```mk
 | Ambiente    | Execução | Instalação Python | Instalação Bibliotecas |
@@ -75,3 +76,4 @@ FPrangeM/
 | Pyenv + pip | 1ª       |        58.000 ms  |            9.000 ms    |
 | Pyenv + pip | 2ª       |            28 ms  |            8.000 ms    |
 ```
+https://drive.google.com/drive/folders/1zvKNmtYlsMaHTfz_wY81AhZwckLjtu44?usp=sharing
