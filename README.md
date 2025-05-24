@@ -39,18 +39,6 @@ cd scripts/uv/
 ./cleanup.sh     # Remove instalações temporárias
 ```
 
-## 📊 Métricas Coletadas
-
-Cada script mede tempos em **milissegundos** para:
-
-|Fase|Variáveis|
-|---|---|
-|📂 Configuração da pasta|`setup_time`|
-|🐍 Instalação do Python|`python_install_time`|
-|🛠️ Setup do ambiente|`env_creation_time`|
-|📦 Instalação de dependências|`deps_installation_time`|
-|▶️ Execução do script|`script_execution_time`|
-
 ## 🧩 Estrutura do Projeto
 
 ```
