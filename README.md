@@ -26,15 +26,17 @@ git clone https://github.com/FPrangeM/Performance_UvAstral.git
 cd Performance_UvAstral
 
 # 2. Execute os testes (Pyenv)
-./scripts/pyenv_pip/setup_1.sh  # Primeira execução (sem cache)
-./scripts/pyenv_pip/setup_2.sh  # Segunda execução (com cache)
+cd scripts/pyenv_pip/
+./setup_1.sh  # Primeira execução (sem cache)
+./setup_2.sh  # Segunda execução (com cache)
 
 # 3. Execute os testes (UV)
-./scripts/uv/setup_1.sh     # Primeira execução
-./scripts/uv/setup_2.sh     # Com cache
+cd scripts/uv/
+./setup_1.sh     # Primeira execução
+./setup_2.sh     # Com cache
 
 # 4. Limpeza (opcional)
-./cleanup.sh                # Remove instalações temporárias
+./cleanup.sh     # Remove instalações temporárias
 ```
 
 ## 📊 Métricas Coletadas
@@ -75,12 +77,13 @@ FPrangeM/
 
     
 
-## 📌 Exemplo de Saída
+## 📌 Resultado Encontrado
 
-```log
-[Configurando pasta] [142 ms]
-[Instalando python 3.9.22] [45230 ms]
-[Configurando ambiente venv] [1820 ms]
-[Instalando dependências] [8943 ms]
-[Rodando script] [320 ms]
+```mk
+| Ambiente    | Execução | Instalação Python | Instalação Bibliotecas |
+|-------------|----------|------------------:|-----------------------:|
+| UV          | 1ª       |         2.000 ms  |            1.000 ms    |
+| UV          | 2ª       |            16 ms  |               80 ms    |
+| Pyenv + pip | 1ª       |        58.000 ms  |            9.000 ms    |
+| Pyenv + pip | 2ª       |            28 ms  |            8.000 ms    |
 ```

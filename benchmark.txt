@@ -1,0 +1,6 @@
+| Ambiente    | Execução | Instalação Python | Instalação Bibliotecas |
+|-------------|----------|------------------:|-----------------------:|
+| UV          | 1ª       |         2.000 ms  |            1.000 ms    |
+| UV          | 2ª       |            16 ms  |               80 ms    |
+| Pyenv + pip | 1ª       |        58.000 ms  |            9.000 ms    |
+| Pyenv + pip | 2ª       |            28 ms  |            8.000 ms    |

@@ -16,34 +16,29 @@ function medir_tempo() {
     echo -e "${AMARELO}[${elapsed} ms]${RESET}"
 }
 
-
 # Configurando pasta
 echo -en "${CINZA}Configurando pasta ${RESET}"
 medir_tempo bash -c '
     cd ../../ &&
-    mkdir -p ./output/uv_1 
-'
+    mkdir -p ./output/uv_1'
 cd ../../output/uv_1/
 
 # Instalando python
 echo -en "${CINZA}Instalando python ${RESET}"
-medir_tempo uv python install 3.9.22
+medir_tempo bash -c '
+    echo &&
+    uv python install 3.9.22'
 
 # Configurando ambiente venv e instalando bibliotecas
 echo -en "${CINZA}Configurando ambiente venv e instalando bibliotecas ${RESET}"
 medir_tempo bash -c '
+    echo &&
     uv init --python 3.9.22 &&
-    uv add -r ../../src/requiriments.txt
-'
+    uv add -r ../../src/requiriments.txt'
+
 # Rodando script
 echo -en "${CINZA}Rodando script ${RESET}"
-medir_tempo uv run ../../src/script.py
-
-
-
-# # Desinstala versões adicionais à do sistema
-# uv python list --only-installed | awk '$2 !~ "/usr/bin/python3" {print $1}' | xargs uv python uninstall 
-# cd ..
-# cd ..
-# rm -r first_repo
+medir_tempo bash -c '
+    echo &&
+    uv run ../../src/script.py'
 

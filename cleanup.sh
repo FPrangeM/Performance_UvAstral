@@ -5,8 +5,11 @@ rm -rf output/
 
 
 # # UV
-# # Remove todas as instalações temporárias do UV
-# uv python list --only-installed | awk '$2 !~ "/usr/bin/python3" {print $1}' | xargs -r uv python uninstall
+# Remover python 
+uv python uninstall cpython-3.9.22
 # # Remove packeges em cache
-# rm -r ~/.cache/uv
+rm -r ~/.cache/uv
 
+# Pyenv
+# Remover python 
+pyenv uninstall -f 3.9.22
